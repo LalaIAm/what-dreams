@@ -1,6 +1,5 @@
 import React, {useState} from 'react'
-import api from '../api/app-write'
-import { FetchState } from '../hooks'
+
 import { useNavigate } from 'react-router-dom'
 
 const SignUpForm = ({dispatch}) => {
@@ -18,15 +17,7 @@ const SignUpForm = ({dispatch}) => {
 
   const handleSignup = async (e) => {
     e.preventDefault()
-    dispatch({ type: FetchState.FETCH_INIT })
-    try {
-      const user = await api.createAccount(email, password, name) 
-      await api.createSession(email, password) 
-      dispatch({ type: FetchState.FETCH_SUCCESS, payload: user })
-      navigate('/app')
-    } catch (e) {
-      dispatch({type: FetchState.FETCH_FAILURE, payload: e.message})
-    }
+   
   }
   
   return (

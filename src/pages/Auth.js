@@ -3,7 +3,7 @@ import SignUpForm from '../components/SignUpForm';
 import LoginForm from '../components/LoginForm';
 import { Link } from 'react-router-dom';
 
-const Auth = ({dispatch}) => {
+const Auth = () => {
   const [isLogin, setIsLogin] = useState(true);
 
   const toggleLogin = () => {
@@ -25,7 +25,7 @@ const Auth = ({dispatch}) => {
                 <h3 className='mb-4 text-center'>
                   {isLogin ? 'Have an Account?' : 'Need an Account?'}
                 </h3>
-                {isLogin ? <LoginForm dispatch={dispatch} /> : <SignUpForm dispatch={dispatch} />}
+                {isLogin ? <LoginForm  /> : <SignUpForm  />}
                 <p className='w-100 text-center'>&mdash; Or Use &mdash;</p>
                 <div className='social d-flex text-center'>
                   <Link to='#' className='px-2 py-2 mr-md-1 rounded m-1'>

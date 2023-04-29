@@ -1,11 +1,10 @@
 import React, {useState} from 'react';
 import { Link } from 'react-router-dom';
-import api from '../api/app-write';
-import { FetchState } from '../hooks';
+
 import { useNavigate } from 'react-router-dom';
 
 
-const LoginForm = ({ dispatch }) => {
+const LoginForm = () => {
   const [email, setEmail] = useState()
   const [password, setPassword] = useState()
 
@@ -14,17 +13,7 @@ const LoginForm = ({ dispatch }) => {
 
   const handleLogin = async e => {
     e.preventDefault() 
-    dispatch({ type: FetchState.FETCH_INIT });
-    try {
-      await api.createSession(email, password) 
-      const data = await api.getAccount() 
    
-      dispatch({ type: FetchState.FETCH_SUCCESS, payload: data })
-      navigate('/app')
-
-    } catch (e) {
-      dispatch({type: FetchState.FETCH_FAILURE, payload: e.message})
-    }
   }
   return (
     <form onSubmit={handleLogin} className='signin-form'>

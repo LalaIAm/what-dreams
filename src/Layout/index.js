@@ -1,13 +1,10 @@
-import { Outlet, Navigate } from 'react-router-dom';
-import { useGetUser } from '../hooks';
+import { Outlet  } from 'react-router-dom';
 
 
 
 const Layout = () => {
-    const [{ user }] = useGetUser()
-    if (!user) {
-        return <Navigate to='/' />
-    }
+   
+    
     return (
         <div className='page layout-page'>
             <Outlet />
