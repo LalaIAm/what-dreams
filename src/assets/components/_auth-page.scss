@@ -1,0 +1,227 @@
+.auth-page {
+    font-family: $font-primary;
+    font-size: 16px;
+    line-height: 1.8;
+    font-weight: normal;
+    color: lighten($black, 50%);
+    position: relative;
+    z-index: 0;
+    padding: 0;
+    background: url(https://images.unsplash.com/photo-1534447677768-be436bb09401?ixlib=rb-4.0.3&ixid=MnwxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8&auto=format&fit=crop&w=1194&q=80) center no-repeat;
+    background-size: cover;
+    &:after {
+        position: absolute;
+        top: 0;
+        left: 0;
+        right: 0;
+        bottom: 0;
+        content: '';
+        background: $black;
+        opacity: .3;
+        z-index: -1;
+    }
+
+    a {
+        transition: .3 all ease;
+        color: $primary;
+        &:hover, &:focus {
+            text-decoration: none !important;
+            outline: none !important;
+            box-shadow: none;
+        }
+    }
+
+ h2, h3, h4, h5, .h1, .h2, .h3, .h4, .h5 {
+        line-height: 1.5;
+        font-weight: 400;
+        font-family: $font-primary;
+        color: $black;
+    }
+}
+
+.bg-primary {
+    background: $primary !important;
+}
+
+.ftco-section {
+    padding: 4em 0;
+}
+
+.heading-section {
+    font-size: 48px;
+    color: $white;
+    font-weight: 400;
+}
+
+.login-wrap {
+    position: relative;
+    color: rgba(255, 255, 255, .9);
+    h3 {
+        font-weight: 300;
+        color: $white;
+    }
+    .social {
+        width: 100%;
+        a {
+            width: 100%;
+            display: block; 
+            border: 1px solid rgba(255, 255, 255, .4);
+            color: $black;
+            background: $white;
+            transition: all .25s ease-in-out;
+            &:hover {
+                background: $black;
+                color: $white;
+                border-color: $black;
+            }
+        }
+    }
+}
+
+.form-group {
+    position: relative;
+}
+
+.field-icon {
+    position: absolute;
+    top: 50%;
+    right: 15px;
+    transform: translateY(-50%);
+    color: rgba(255, 255, 255, .9);
+}
+
+.auth-page {
+    .form-control {
+        background: transparent;
+        border: none;
+        height: 50px;
+        color: rgba(255, 255, 255, 1) !important;
+        border: 1px solid transparent;
+        background: rgba(255, 255, 255, .3);
+        border-radius: 40px;
+        padding-left: 20px;
+        padding-right: 20px;
+        @include transition(.3s);
+        &::-webkit-input-placeholder {
+            color: rgba(255, 255, 255, .8) !important;
+        }
+        &::-moz-placeholder {
+            color: rgba(255, 255, 255, .8) !important;
+        }
+        &:-ms-input-placeholder {
+            color: rgba(255, 255, 255, .8) !important;
+        }
+        &:-moz-placeholder {
+            color: rgba(255, 255, 255, .9) !important;
+        }
+        &:hover, &:focus {
+            background: transparent;
+            outline: none;
+            box-shadow: none;
+            border-color: rgba(255, 255, 255, .4);
+        }
+        &:focus {
+            border-color: rgba(255, 255, 255, .4);
+        }
+    }
+    textarea.form-control {
+        height: inherit !important;
+    }
+
+
+}
+
+.checkbox-wrap {
+    display: block;
+    position: relative;
+    padding-left: 30px;
+    margin-bottom: 12px;
+    cursor: poiner;
+    font-size: 16px;
+    font-weight: 500;
+    user-select: none;
+}
+
+.checkbox-wrap input {
+    position: absolute;
+    opacity: 0;
+    cursor: pointer;
+    height: 0;
+    width: 0;
+}
+
+.checkmark {
+    position: absolute;
+    top: 0;
+    left: 0;
+
+    &:after {
+        content: "\f0c8";
+        font-family: "FontAwesome";
+        position: absolute;
+        color: rgba(255, 255, 255, .1);
+        font-size: 20px;
+        margin-top: -4px;
+        @include transition(.3s);
+    }
+
+    
+}
+
+.checkbox-wrap {
+    input:checked ~ .checkmark:after {
+        display: block;
+        content: "\f14a";
+        font-family: "FontAwesome";
+        color: rgba(0, 0, 0, 0.2);
+    }
+}
+
+.checkbox-primary {
+    color: $primary;
+    input:checked ~ .checkmark:after {
+        color: $primary;
+    }
+}
+
+.btn {
+    cursor: pointer;
+    @include border-radius(40px);
+    box-shadow: none !important;
+    font-size: 15px;
+    text-transform: uppercase;
+    &:hover, &:active, &:focus {
+        outline: none;
+    }
+    &.btn-primary {
+        background: $primary !important;
+        border: 1px solid $primary !important;
+        color: $black !important;
+        &:hover {
+            border: 1px solid $primary !important;
+            background: transparent !important;
+            color: $primary !important;
+        }
+        &.btn-outline-primary {
+            border: 1px solid $primary;
+            background: transparent;
+            color: $primary;
+            &:hover {
+                border: 1px solid transparent;
+                background: $primary;
+                color: $white;
+            }
+        }
+    }
+    }
+
+
+    .login-toggle {
+        text-decoration: underline !important;
+        cursor: pointer;
+        font-weight: 600;
+
+        &:hover {
+            color: lightblue;
+        }
+    }
